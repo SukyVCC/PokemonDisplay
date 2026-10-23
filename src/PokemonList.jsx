@@ -28,10 +28,10 @@ const PokemonList = () => {
                 alt={pokemon.name}
               />
             </div>
-            <div className="pokemon-name">{pokemon.name}</div>
-            <div className="pokemon-link">
+            <p className="pokemon-name">{pokemon.name}</p>
+            <p className="pokemon-link">
               <a href={`/pokemon/${pokemon.name}`}>View Details</a>
-            </div>
+            </p>
           </div>
         ))}
       </div>
