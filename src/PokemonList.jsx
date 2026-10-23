@@ -6,7 +6,7 @@ const PokemonList = () => {
 
   const fetchPokemons = async () => {
     try {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
       const data = await response.json();
       setPokemons(data.results);
     } catch (error) {
