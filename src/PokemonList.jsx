@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import "./App.css"
 
 const PokemonList = () => {
@@ -19,9 +20,9 @@ const PokemonList = () => {
   }, []);
 
   return (
-      <div className="pokemon-container">
+      <Routes className="pokemon-container">
         {pokemon.map((pokemon, index) => (
-          <div key={index} className="pokemon-card">
+          <Route key={index} className="pokemon-card" path={`/pokemon/${index + 1}`} element={<PokemonDetailPage />} >
             <div className="pokemon-image">
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
@@ -29,9 +30,9 @@ const PokemonList = () => {
               />
             </div>
             <div className="pokemon-name">{pokemon.name}</div>
-          </div>
+          </Route>
         ))}
-      </div>
+      </Routes>
   );
 };
 
