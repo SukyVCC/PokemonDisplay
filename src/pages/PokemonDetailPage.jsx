@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 const URL = 'https://pokeapi.co/api/v2/pokemon/';
 
 const PokemonDetailPage = () => {
+    // take name from the url and use it to fetch the pokemon data from the api
   const { name } = useParams();
   const [pokemon, setPokemon] = useState(null);
 
@@ -19,7 +20,7 @@ const PokemonDetailPage = () => {
     };
 
     fetchPokemon();
-  }, [id]);
+  }, [name]);
 
   if (!pokemon) {
     return <div>Loading...</div>;
