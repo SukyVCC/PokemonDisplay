@@ -4,13 +4,13 @@ import { useParams } from 'react-router-dom';
 const URL = 'https://pokeapi.co/api/v2/pokemon/';
 
 const PokemonDetailPage = () => {
-  const { id } = useParams();
+  const { name } = useParams();
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await fetch(`${URL}${id}`);
+        const response = await fetch(`${URL}${name}`);
         const data = await response.json();
         setPokemon(data);
       } catch (error) {
