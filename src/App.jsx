@@ -1,18 +1,19 @@
 import { useState } from 'react'
 import { Routes , Route } from 'react-router-dom'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
-import PokemonList from './PokemonList'
+import Pokedex from './Pokedex'
+import PokemonDetailPage from './pages/PokemonDetailPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <Routes>
-      <Route path="/" element={<PokemonDex />} />
+      <Route path="/" element={<Pokedex />} />
+      <Route path='/dashboard' element={<Pokedex />} />
       <Route path="/pokemon/:name" element={<PokemonDetailPage />} />
+      <Route path='*' element={<NotFoundPage />} />
     </Routes>
   )
 }
