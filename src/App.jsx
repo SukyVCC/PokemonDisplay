@@ -10,7 +10,8 @@ function App() {
 
   return (
     <>
-      <PokemonList/>
+      <h1>Pokemon React App Using PokeAPI</h1>
+      <Pokedex />
     </>
   )
 }
