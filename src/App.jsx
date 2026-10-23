@@ -10,9 +10,7 @@ function App() {
 
   return (
     <>
-      <section id="center">
-        <PokemonList/>
-        </section>
+      <PokemonList/>
     </>
   )
 }
